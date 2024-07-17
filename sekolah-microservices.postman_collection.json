@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "722315d1-df8d-4a52-8693-ce97b26bb9bb",
+		"name": "sekolah-microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19238452"
+	},
+	"item": [
+		{
+			"name": "main",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"namaDepan\": \"Admin\",\r\n    \"namaBelakang\": \"Super\",\r\n    \"email\": \"superadmin@mail.com\",\r\n    \"password\": \"1234\",\r\n    \"tanggalLahir\": \"1999-08-30\",\r\n    \"jenisKelamin\": \"L\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/main/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"superadmin@mail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/main/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "student crud",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluQG1haWwuY29tIiwiaWF0IjoxNzIxMjMzNTk2LCJleHAiOjE3MjEyMzcxOTZ9.ocBgTWX2QooAvP_wBS8usAe8j3mnroyic4h3cVYE6eE"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"student6\",\r\n    \"email\": \"student6@mail.com\",\r\n    \"password\": \"1234\",\r\n    \"class_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/main/student"
+					},
+					"response": []
+				},
+				{
+					"name": "teacher crud",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluQG1haWwuY29tIiwiaWF0IjoxNzIxMjMzNjk4LCJleHAiOjE3MjEyMzcyOTh9.-wmeB2b6SkxBgWnYtGzemX2Zls1FDGef5pOqAVEP7uQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"teacher1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/main/teacher"
+					},
+					"response": []
+				},
+				{
+					"name": "classroom crud",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluQG1haWwuY29tIiwiaWF0IjoxNzIxMjMzNjk4LCJleHAiOjE3MjEyMzcyOTh9.-wmeB2b6SkxBgWnYtGzemX2Zls1FDGef5pOqAVEP7uQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/api/main/classroom"
+					},
+					"response": []
+				},
+				{
+					"name": "subject crud",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluQG1haWwuY29tIiwiaWF0IjoxNzIxMjMzNjk4LCJleHAiOjE3MjEyMzcyOTh9.-wmeB2b6SkxBgWnYtGzemX2Zls1FDGef5pOqAVEP7uQ"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"kimia\",\r\n    \"description\": \"matpel kimia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/main/subject"
+					},
+					"response": []
+				},
+				{
+					"name": "add student to classroom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"classId\": 1,\r\n    \"studentId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/main/classroom/addstudenttoclass"
+					},
+					"response": []
+				},
+				{
+					"name": "add subject to classroom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"classId\": 1,\r\n    \"subjectId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/main/classroom/addsubjecttoclass"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "messaging",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"student1@mail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/messaging/login"
+					},
+					"response": []
+				},
+				{
+					"name": "inbox",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"student2@mail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/api/messaging/inbox"
+					},
+					"response": []
+				},
+				{
+					"name": "sent message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"test\",\r\n    \"body\": \"test test test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/messaging/send/?email=student1@mail.com&password=1234&receiver=student2@mail.com, student3@mail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"messaging",
+								"send",
+								""
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "student1@mail.com"
+								},
+								{
+									"key": "password",
+									"value": "1234"
+								},
+								{
+									"key": "receiver",
+									"value": "student2@mail.com, student3@mail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
